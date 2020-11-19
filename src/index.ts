@@ -763,7 +763,7 @@ export function hasNotch() {
     let _model = getModel();
     notch =
       devicesWithNotch.findIndex(
-        item =>
+        (item) =>
           item.brand.toLowerCase() === _brand.toLowerCase() &&
           item.model.toLowerCase() === _model.toLowerCase()
       ) !== -1;
@@ -838,20 +838,6 @@ export function getLastUpdateTimeSync() {
     }
   }
   return lastUpdateTime;
-}
-
-export async function getPhoneNumber() {
-  if (OS === 'android') {
-    return RNDeviceInfo.getPhoneNumber();
-  }
-  return 'unknown';
-}
-
-export function getPhoneNumberSync() {
-  if (OS === 'android') {
-    return RNDeviceInfo.getPhoneNumberSync();
-  }
-  return 'unknown';
 }
 
 export async function getCarrier() {
@@ -1321,8 +1307,6 @@ export default {
   getInstallReferrerSync,
   getLastUpdateTime,
   getLastUpdateTimeSync,
-  getPhoneNumber,
-  getPhoneNumberSync,
   getCarrier,
   getCarrierSync,
   getTotalMemory,

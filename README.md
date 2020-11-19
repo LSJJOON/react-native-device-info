@@ -63,9 +63,9 @@ This module defaults to AndroidX you should configure your library versions simi
     //Option 2 (legacy GooglePlay dependency but using AndroidX):
     googlePlayServicesIidVersion = "17.0.0" // default: "17.0.0" - AndroidX
     //Option 3 (legacy GooglePlay dependency before AndroidX):
-    googlePlayServicesIidVersion = "16.0.1" 
-    
-    
+    googlePlayServicesIidVersion = "16.0.1"
+
+
     //include as needed:
     compileSdkVersion = "28" // default: 28 (28 is required for AndroidX)
     targetSdkVersion = "28" // default: 28 (28 is required for AndroidX)
@@ -340,7 +340,6 @@ Every API returns a Promise but also has a corresponding API with 'Sync' on the 
 | [getManufacturer()](#getmanufacturer)                             | `Promise<string>`   |  ✅  |   ✅    |   ✅    |
 | [getMaxMemory()](#getmaxmemory)                                   | `Promise<number>`   |  ❌  |   ✅    |   ✅    |
 | [getModel()](#getmodel)                                           | `string`            |  ✅  |   ✅    |   ✅    |
-| [getPhoneNumber()](#getphonenumber)                               | `Promise<string>`   |  ❌  |   ✅    |   ❌    |
 | [getPowerState()](#getpowerstate)                                 | `Promise<object>`   |  ✅  |   ✅    |   ❌    |
 | [getProduct()](#getproduct)                                       | `Promise<string>`   |  ❌  |   ✅    |   ❌    |
 | [getPreviewSdkInt()](#getPreviewSdkInt)                           | `Promise<number>`   |  ❌  |   ✅    |   ❌    |
@@ -381,7 +380,7 @@ Gets the API level.
 #### Examples
 
 ```js
-DeviceInfo.getApiLevel().then(apiLevel => {
+DeviceInfo.getApiLevel().then((apiLevel) => {
   // iOS: ?
   // Android: 25
   // Windows: ?
@@ -401,7 +400,7 @@ Gets the ANDROID_ID. See [API documentation](https://developer.android.com/refer
 #### Examples
 
 ```js
-DeviceInfo.getAndroidId().then(androidId => {
+DeviceInfo.getAndroidId().then((androidId) => {
   // androidId here
 });
 ```
@@ -428,7 +427,7 @@ The base OS build the product is based on.
 #### Examples
 
 ```js
-DeviceInfo.getBaseOs().then(baseOs => {
+DeviceInfo.getBaseOs().then((baseOs) => {
   // "Windows", "Android" etc
 });
 ```
@@ -442,7 +441,7 @@ Gets the battery level of the device as a float comprised between 0 and 1.
 #### Examples
 
 ```js
-DeviceInfo.getBatteryLevel().then(batteryLevel => {
+DeviceInfo.getBatteryLevel().then((batteryLevel) => {
   // 0.759999
 });
 ```
@@ -469,7 +468,7 @@ The system bootloader version number.
 #### Examples
 
 ```js
-DeviceInfo.getBootloader().then(bootloader => {
+DeviceInfo.getBootloader().then((bootloader) => {
   // "mw8998-002.0069.00"
 });
 ```
@@ -527,10 +526,10 @@ Tells if the device have any camera now.
 
 ```js
 DeviceInfo.isCameraPresent()
-  .then(isCameraPresent => {
+  .then((isCameraPresent) => {
     // true or false
   })
-  .catch(cameraAccessException => {
+  .catch((cameraAccessException) => {
     // is thrown if a camera device could not be queried or opened by the CameraManager on Android
   });
 ```
@@ -549,7 +548,7 @@ Gets the carrier name (network operator).
 #### Examples
 
 ```js
-DeviceInfo.getCarrier().then(carrier => {
+DeviceInfo.getCarrier().then((carrier) => {
   // "SOFTBANK"
 });
 ```
@@ -563,7 +562,7 @@ The current development codename, or the string "REL" if this is a release build
 #### Examples
 
 ```js
-DeviceInfo.getCodename().then(codename => {
+DeviceInfo.getCodename().then((codename) => {
   // "REL"
 });
 ```
@@ -577,7 +576,7 @@ The name of the industrial design.
 #### Examples
 
 ```js
-DeviceInfo.getDevice().then(device => {
+DeviceInfo.getDevice().then((device) => {
   // "walleye"
 });
 ```
@@ -606,7 +605,7 @@ A build ID string meant for displaying to the user.
 #### Examples
 
 ```js
-DeviceInfo.getDisplay().then(display => {
+DeviceInfo.getDisplay().then((display) => {
   // "OPM2.171026.006.G1"
 });
 ```
@@ -620,7 +619,7 @@ Gets the device name.
 #### Examples
 
 ```js
-DeviceInfo.getDeviceName().then(deviceName => {
+DeviceInfo.getDeviceName().then((deviceName) => {
   // iOS: "Becca's iPhone 6"
   // Android: ?
   // Windows: ?
@@ -638,7 +637,7 @@ Gets the time at which the app was first installed, in milliseconds.
 #### Examples
 
 ```js
-DeviceInfo.getFirstInstallTime().then(firstInstallTime => {
+DeviceInfo.getFirstInstallTime().then((firstInstallTime) => {
   // Android: 1517681764528
 });
 ```
@@ -652,7 +651,7 @@ A string that uniquely identifies this build.
 #### Examples
 
 ```js
-DeviceInfo.getFingerprint().then(fingerprint => {
+DeviceInfo.getFingerprint().then((fingerprint) => {
   // "google/walleye/walleye:8.1.0/OPM2.171026.006.G1/4820017:user/release-keys"
 });
 ```
@@ -670,7 +669,7 @@ In iOS App Extensions this call always returns 1.0, see #625.
 #### Examples
 
 ```js
-DeviceInfo.getFontScale().then(fontScale => {
+DeviceInfo.getFontScale().then((fontScale) => {
   // 1.2
 });
 ```
@@ -684,7 +683,7 @@ Gets available storage size, in bytes.
 #### Examples
 
 ```js
-DeviceInfo.getFreeDiskStorage().then(freeDiskStorage => {
+DeviceInfo.getFreeDiskStorage().then((freeDiskStorage) => {
   // Android: 17179869184
   // iOS: 17179869184
 });
@@ -725,7 +724,7 @@ Hostname
 #### Examples
 
 ```js
-DeviceInfo.getHost().then(host => {
+DeviceInfo.getHost().then((host) => {
   // "wprd10.hot.corp.google.com"
 });
 ```
@@ -740,7 +739,7 @@ Switch to @react-native-community/netinfo or react-native-network-info
 #### Examples
 
 ```js
-DeviceInfo.getIpAddress().then(ip => {
+DeviceInfo.getIpAddress().then((ip) => {
   // "92.168.32.44"
 });
 ```
@@ -762,7 +761,7 @@ The internal value used by the underlying source control to represent this build
 #### Examples
 
 ```js
-DeviceInfo.getIncremental().then(incremental => {
+DeviceInfo.getIncremental().then((incremental) => {
   // "4820017"
 });
 ```
@@ -776,7 +775,7 @@ Gets the referrer string upon application installation.
 #### Examples
 
 ```js
-DeviceInfo.getInstallReferrer().then(installReferrer => {
+DeviceInfo.getInstallReferrer().then((installReferrer) => {
   // If the app was installed from https://play.google.com/store/apps/details?id=com.myapp&referrer=my_install_referrer
   // the result will be "my_install_referrer"
 });
@@ -791,7 +790,7 @@ Gets the application instance ID.
 #### Examples
 
 ```js
-DeviceInfo.getInstanceId().then(instanceId => {
+DeviceInfo.getInstanceId().then((instanceId) => {
   // Android: ?
 });
 ```
@@ -809,7 +808,7 @@ Gets the time at which the app was last updated, in milliseconds.
 #### Examples
 
 ```js
-DeviceInfo.getLastUpdateTime().then(lastUpdateTime => {
+DeviceInfo.getLastUpdateTime().then((lastUpdateTime) => {
   // Android: 1517681764992
 });
 ```
@@ -823,7 +822,7 @@ Gets the network adapter MAC address.
 #### Examples
 
 ```js
-DeviceInfo.getMacAddress().then(mac => {
+DeviceInfo.getMacAddress().then((mac) => {
   // "E5:12:D8:E5:69:97"
 });
 ```
@@ -845,7 +844,7 @@ Gets the device manufacturer.
 #### Examples
 
 ```js
-DeviceInfo.getManufacturer().then(manufacturer => {
+DeviceInfo.getManufacturer().then((manufacturer) => {
   // iOS: "Apple"
   // Android: "Google"
   // Windows: ?
@@ -861,7 +860,7 @@ Returns the maximum amount of memory that the VM will attempt to use, in bytes.
 #### Examples
 
 ```js
-DeviceInfo.getMaxMemory().then(maxMemory => {
+DeviceInfo.getMaxMemory().then((maxMemory) => {
   // 402653183
 });
 ```
@@ -885,28 +884,6 @@ let model = DeviceInfo.getModel();
 
 ---
 
-### getPhoneNumber()
-
-Gets the device phone number.
-
-#### Examples
-
-```js
-DeviceInfo.getPhoneNumber().then(phoneNumber => {
-  // Android: null return: no permission, empty string: unprogrammed or empty SIM1, e.g. "+15555215558": normal return value
-});
-```
-
-#### Android Permissions
-
-- [android.permission.READ_PHONE_STATE](https://developer.android.com/reference/android/Manifest.permission.html#READ_PHONE_STATE)
-
-#### Notes
-
-> This can return `undefined` in certain cases and should not be relied on. [SO entry on the subject](https://stackoverflow.com/questions/2480288/programmatically-obtain-the-phone-number-of-the-android-phone#answer-2480307).
-
----
-
 ### getPowerState()
 
 Gets the power state of the device including the battery level, whether it is plugged in, and if the system is currently operating in low power mode.
@@ -915,7 +892,7 @@ Displays a warning on iOS if battery monitoring not enabled, or if attempted on 
 #### Examples
 
 ```js
-DeviceInfo.getPowerState().then(state => {
+DeviceInfo.getPowerState().then((state) => {
   // {
   //   batteryLevel: 0.759999,
   //   batteryState: 'unplugged',
@@ -933,7 +910,7 @@ The name of the overall product.
 #### Examples
 
 ```js
-DeviceInfo.getProduct().then(product => {
+DeviceInfo.getProduct().then((product) => {
   // "walleye"
 });
 ```
@@ -947,7 +924,7 @@ The developer preview revision of a prerelease SDK.
 #### Examples
 
 ```js
-DeviceInfo.getPreviewSdkInt().then(previewSdkInt => {
+DeviceInfo.getPreviewSdkInt().then((previewSdkInt) => {
   // 0
 });
 ```
@@ -976,7 +953,7 @@ Gets the device serial number. Will be 'unknown' in almost all cases [unless you
 #### Examples
 
 ```js
-DeviceInfo.getSerialNumber().then(serialNumber => {
+DeviceInfo.getSerialNumber().then((serialNumber) => {
   // iOS: unknown
   // Android: ? (maybe a serial number, if your app is privileged)
   // Windows: unknown
@@ -992,7 +969,7 @@ The user-visible security patch level.
 #### Examples
 
 ```js
-DeviceInfo.getSecurityPatch().then(securityPatch => {
+DeviceInfo.getSecurityPatch().then((securityPatch) => {
   // "2018-07-05"
 });
 ```
@@ -1036,7 +1013,7 @@ Gets build number of the operating system.
 #### Examples
 
 ```js
-DeviceInfo.getBuildId().then(buildId => {
+DeviceInfo.getBuildId().then((buildId) => {
   // iOS: "12A269"
   // tvOS: not available
   // Android: "13D15"
@@ -1053,7 +1030,7 @@ Comma-separated tags describing the build.
 #### Examples
 
 ```js
-DeviceInfo.getTags().then(tags => {
+DeviceInfo.getTags().then((tags) => {
   // "release-keys, unsigned, debug",
 });
 ```
@@ -1067,7 +1044,7 @@ The type of build.
 #### Examples
 
 ```js
-DeviceInfo.getType().then(type => {
+DeviceInfo.getType().then((type) => {
   // "user", "eng"
 });
 ```
@@ -1081,7 +1058,7 @@ Gets full disk storage size, in bytes.
 #### Examples
 
 ```js
-DeviceInfo.getTotalDiskCapacity().then(capacity => {
+DeviceInfo.getTotalDiskCapacity().then((capacity) => {
   // Android: 17179869184
   // iOS: 17179869184
 });
@@ -1096,7 +1073,7 @@ Gets the device total memory, in bytes.
 #### Examples
 
 ```js
-DeviceInfo.getTotalMemory().then(totalMemory => {
+DeviceInfo.getTotalMemory().then((totalMemory) => {
   // 1995018240
 });
 ```
@@ -1136,7 +1113,7 @@ Gets the app memory usage, in bytes.
 #### Examples
 
 ```js
-DeviceInfo.getUsedMemory().then(usedMemory => {
+DeviceInfo.getUsedMemory().then((usedMemory) => {
   // 23452345
 });
 ```
@@ -1150,7 +1127,7 @@ Gets the device User Agent.
 #### Examples
 
 ```js
-DeviceInfo.getUserAgent().then(userAgent => {
+DeviceInfo.getUserAgent().then((userAgent) => {
   // iOS: "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143"
   // tvOS: not available
   // Android: ?
@@ -1182,7 +1159,7 @@ Tells if the device is in Airplane Mode.
 #### Examples
 
 ```js
-DeviceInfo.isAirplaneMode().then(airplaneModeOn => {
+DeviceInfo.isAirplaneMode().then((airplaneModeOn) => {
   // false
 });
 ```
@@ -1200,7 +1177,7 @@ Tells if the battery is currently charging.
 #### Examples
 
 ```js
-DeviceInfo.isBatteryCharging().then(isCharging => {
+DeviceInfo.isBatteryCharging().then((isCharging) => {
   // true or false
 });
 ```
@@ -1214,7 +1191,7 @@ Tells if the application is running in an emulator.
 #### Examples
 
 ```js
-DeviceInfo.isEmulator().then(isEmulator => {
+DeviceInfo.isEmulator().then((isEmulator) => {
   // false
 });
 ```
@@ -1228,7 +1205,7 @@ Tells if a PIN number or a fingerprint was set for the device.
 #### Examples
 
 ```js
-DeviceInfo.isPinOrFingerprintSet().then(isPinOrFingerprintSet => {
+DeviceInfo.isPinOrFingerprintSet().then((isPinOrFingerprintSet) => {
   if (!isPinOrFingerprintSet) {
     // ...
   }
@@ -1257,7 +1234,7 @@ Tells if the device is currently in landscape mode.
 #### Examples
 
 ```js
-DeviceInfo.isLandscape().then(isLandscape => {
+DeviceInfo.isLandscape().then((isLandscape) => {
   // true
 });
 ```
@@ -1272,7 +1249,7 @@ Tells if the device has a notch.
 
 ```js
 let hasNotch = DeviceInfo.hasNotch();
-  // true
+// true
 ```
 
 ---
@@ -1302,7 +1279,7 @@ An ordered list of 32 bit ABIs supported by this device.
 #### Examples
 
 ```js
-DeviceInfo.supported32BitAbis().then(abis => {
+DeviceInfo.supported32BitAbis().then((abis) => {
   // ["armeabi-v7a", "armeabi"]
 });
 ```
@@ -1316,7 +1293,7 @@ An ordered list of 64 bit ABIs supported by this device.
 #### Examples
 
 ```js
-DeviceInfo.supported64BitAbis().then(abis => {
+DeviceInfo.supported64BitAbis().then((abis) => {
   // ["arm64-v8a"]
 });
 ```
@@ -1330,7 +1307,7 @@ Returns a list of supported processor architecture version
 #### Examples
 
 ```js
-DeviceInfo.supportedAbis().then(abis => {
+DeviceInfo.supportedAbis().then((abis) => {
   // [ "arm64 v8", "Intel x86-64h Haswell", "arm64-v8a", "armeabi-v7a", "armeabi" ]
 });
 ```
@@ -1344,7 +1321,7 @@ Tells if the device has a specific system feature.
 #### Examples
 
 ```js
-DeviceInfo.hasSystemFeature('amazon.hardware.fire_tv').then(hasFeature => {
+DeviceInfo.hasSystemFeature('amazon.hardware.fire_tv').then((hasFeature) => {
   // true or false
 });
 ```
@@ -1358,7 +1335,7 @@ Returns a list of available system features on Android.
 #### Examples
 
 ```js
-DeviceInfo.getSystemAvailableFeatures().then(features => {
+DeviceInfo.getSystemAvailableFeatures().then((features) => {
   // ["android.software.backup", "android.hardware.screen.landscape", "android.hardware.wifi", ...]
 });
 ```
@@ -1370,7 +1347,7 @@ Tells if the device has location services turned off at the device-level (NOT re
 #### Examples
 
 ```js
-DeviceInfo.isLocationEnabled().then(enabled => {
+DeviceInfo.isLocationEnabled().then((enabled) => {
   // true or false
 });
 ```
@@ -1382,9 +1359,9 @@ Tells if the device is connected to wired headset or bluetooth headphones
 #### Examples
 
 ```js
-DeviceInfo.isHeadphonesConnected().then(enabled => {
+DeviceInfo.isHeadphonesConnected().then((enabled) => {
   // true or false
-})
+});
 ```
 
 ### getAvailableLocationProviders()
@@ -1396,7 +1373,7 @@ Returns an object of **platform-specfic** location providers/servcies, with `boo
 #### Android Example
 
 ```js
-DeviceInfo.getAvailableLocationProviders().then(providers => {
+DeviceInfo.getAvailableLocationProviders().then((providers) => {
   // {
   //   gps: true
   //   network: true
@@ -1408,7 +1385,7 @@ DeviceInfo.getAvailableLocationProviders().then(providers => {
 #### iOS Example
 
 ```js
-DeviceInfo.getAvailableLocationProviders().then(providers => {
+DeviceInfo.getAvailableLocationProviders().then((providers) => {
   // {
   //   headingAvailable: false
   //   isRangingAvailable: false
@@ -1429,18 +1406,18 @@ Fired when the battery level changes; sent no more frequently than once per minu
 #### Examples
 
 ```js
-import { useBatteryLevel } from 'react-native-device-info'
+import { useBatteryLevel } from 'react-native-device-info';
 
 const batteryLevel = useBatteryLevel(); // 0.759999
 
-<Text>{ batteryLevel }</Text>
+<Text>{batteryLevel}</Text>;
 ```
 
 ```js
 import { NativeEventEmitter, NativeModules } from 'react-native';
 const deviceInfoEmitter = new NativeEventEmitter(NativeModules.RNDeviceInfo);
 
-deviceInfoEmitter.addListener('RNDeviceInfo_batteryLevelDidChange', level => {
+deviceInfoEmitter.addListener('RNDeviceInfo_batteryLevelDidChange', (level) => {
   // 0.759999
 });
 ```
@@ -1459,18 +1436,18 @@ Fired when the battery drops is considered low
 #### Examples
 
 ```js
-import { useBatteryLevelIsLow } from 'react-native-device-info'
+import { useBatteryLevelIsLow } from 'react-native-device-info';
 
 const batteryLevelIsLow = useBatteryLevelIsLow(); // 0.19
 
-<Text>{ batteryLevelIsLow }</Text>
+<Text>{batteryLevelIsLow}</Text>;
 ```
 
 ```js
 import { NativeEventEmitter, NativeModules } from 'react-native';
 const deviceInfoEmitter = new NativeEventEmitter(NativeModules.RNDeviceInfo);
 
-deviceInfoEmitter.addListener('RNDeviceInfo_batteryLevelIsLow', level => {
+deviceInfoEmitter.addListener('RNDeviceInfo_batteryLevelIsLow', (level) => {
   // 0.19
 });
 ```
@@ -1484,11 +1461,11 @@ Fired when the battery state changes, for example when the device enters chargin
 #### Examples
 
 ```js
-import { usePowerState } from 'react-native-device-info'
+import { usePowerState } from 'react-native-device-info';
 
 const powerState = usePowerState(); // 'charging'
 
-<Text>{ powerState }</Text>
+<Text>{powerState}</Text>;
 ```
 
 ```js
@@ -1503,6 +1480,7 @@ deviceInfoEmitter.addListener('RNDeviceInfo_powerStateDidChange', { batteryState
 ## Native interoperatibily
 
 If you need to check for device type from the native side, you can use the following:
+
 ```java
 import com.learnium.resolver.DeviceTypeResolver
 

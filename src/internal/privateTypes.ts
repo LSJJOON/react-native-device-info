@@ -89,8 +89,6 @@ export interface DeviceInfoNativeModule {
   isCameraPresentSync: () => boolean;
   getMacAddress: () => Promise<string>;
   getMacAddressSync: () => string;
-  getPhoneNumber: () => Promise<string>;
-  getPhoneNumberSync: () => string;
   getCarrier: () => Promise<string>;
   getCarrierSync: () => string;
   getTotalMemory: () => Promise<number>;
